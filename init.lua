@@ -111,7 +111,7 @@ hs.hotkey.bind(hspoon_key, "R", function()
   hs.reload()
 end)
 
-hs.hotkey.bind(hspoon_key, "T", function()
+hs.hotkey.bind(hspoon_key, "A", function()
   local choices = {}
   for file in lfs.dir('/Applications') do
     if file:sub(-4) == ".app" then
@@ -119,6 +119,7 @@ hs.hotkey.bind(hspoon_key, "T", function()
       end
   end
   cs = hs.chooser.new(completionFn)
+  cs:bgDark(true)
   cs:choices(choices)
   cs:show()
 end)
