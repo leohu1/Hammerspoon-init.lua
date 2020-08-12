@@ -1,3 +1,6 @@
+-- local path = os.getenv("HOME") .. "/.hammerspoon/lfs.so"
+require("lfs")
+-- lfs = package.loadlib(path, "luaopen_lfs")()
 dofile(os.getenv("HOME") .. "/.hammerspoon/config.lua")
 dofile(os.getenv("HOME") .. "/.hammerspoon/pomodoor.lua")
 dofile(os.getenv("HOME") .. "/.hammerspoon/caffeine.lua")
@@ -20,6 +23,11 @@ for _index,screen in pairs(hs.screen.allScreens()) do
       hs.grid.setGrid(string.format('%d * %d', screen_x, screen_y), screen)
     end
   end
+end
+
+function completionFn(text)
+  print(text["uuid"])
+  hs.application.open(text["uuid"])
 end
 
 -- hspoon_list = config.hspoon_list
@@ -101,6 +109,18 @@ end)
 
 hs.hotkey.bind(hspoon_key, "R", function()
   hs.reload()
+end)
+
+hs.hotkey.bind(hspoon_key, "T", function()
+  local choices = {}
+  for file in lfs.dir('/Applications') do
+    if file:sub(-4) == ".app" then
+            choices[#choices + 1] =  { ["text"] = file:sub(1, -5), ["uuid"] = file:sub(1, -5) }
+      end
+  end
+  cs = hs.chooser.new(completionFn)
+  cs:choices(choices)
+  cs:show()
 end)
 
 hs.notify.new({title="Hammerspoon", informativeText="reload"}):send()
