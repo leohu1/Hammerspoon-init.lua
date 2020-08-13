@@ -1,0 +1,39 @@
+[
+  {
+    "Command": [],
+    "Constant": [],
+    "Constructor": [],
+    "Deprecated": [],
+    "Field": [],
+    "Function": [],
+    "Method": [
+      {
+        "def": "CChooser:show()",
+        "desc": "Show CChooser",
+        "doc": "Show CChooser",
+        "name": "show",
+        "signature": "CChooser:show()",
+        "stripped_doc": "",
+        "type": "Method"
+      }
+    ],
+    "Variable": [],
+    "desc": "CChooser Search",
+    "doc": "CChooser Search",
+    "items": [
+      {
+        "def": "CChooser:show()",
+        "desc": "Show CChooser",
+        "doc": "Show CChooser",
+        "name": "show",
+        "signature": "CChooser:show()",
+        "stripped_doc": "",
+        "type": "Method"
+      }
+    ],
+    "name": "CChooser",
+    "stripped_doc": "",
+    "submodules": [],
+    "type": "Module"
+  }
+]

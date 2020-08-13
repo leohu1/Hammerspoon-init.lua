@@ -1,6 +1,8 @@
+-- HSearch.search_path='/Applications'
+
 hspoon_list = {
         "Calendar",
-        -- "SpeedMenu"
+        "CChooser"
     }
 
 hspoon_key = {"ctrl", "cmd"}
